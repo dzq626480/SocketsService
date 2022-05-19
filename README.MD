@@ -1,5 +1,6 @@
 # ImageGist Service
 
-* sockets service
+* sockets service(java)  
+socket client(c++)
 * pass protobuf in sockets
-* parse image gist features
+* parse image and get gist features
