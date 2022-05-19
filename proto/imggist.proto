@@ -1,0 +1,27 @@
+syntax = "proto2";
+
+package dzq.imaggist.pb;
+option java_outer_classname = "ImgGistPB";
+
+message ImgGistReq {
+  optional uint32 id = 1;
+  optional string imageUrl = 2;
+  optional uint32 imageHigh = 3;
+  optional uint32 imageWidth = 4;
+  optional bytes imageData = 5;
+}
+
+message ImgGistResp {
+  enum ImgGistRespReturnCode {
+      ReturnOK = 1;
+      IsNullRequest = 2;
+      ParsePBFailFromRequest = 3;
+      GetGistDescFail = 4;
+      UnknownFail = 5;
+  }
+
+  optional uint32 id = 1;
+  optional string imageUrl = 2;
+  repeated float features = 3;
+  optional ImgGistRespReturnCode ret = 4;
+}
